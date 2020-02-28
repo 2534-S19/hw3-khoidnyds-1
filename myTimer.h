@@ -1,8 +1,8 @@
 /*
  * myTimer.h
  *
- *  Created on:
- *      Author:
+ *  Created on: Feb 28, 2020
+ *      Author: Khoi Dang
  */
 
 #include <ti/devices/msp432p4xx/driverlib/driverlib.h>
