@@ -14,17 +14,13 @@
 void initTimer(unsigned int timer, unsigned int preScaler, unsigned int count)
 {
     // For the specified timer and pre-scale value, put the timer in 32-bit periodic mode.
-    Timer32_initModule(TIMER0,TIMER0_PRESCALER,TIMER32_32BIT,TIMER32_PERIODIC_MODE);
-    Timer32_initModule(TIMER1,TIMER1_PRESCALER,TIMER32_32BIT,TIMER32_FREE_RUN_MODE);
+    Timer32_initModule(timer,preScaler,TIMER32_32BIT,TIMER32_PERIODIC_MODE);
 
     // For the specified timer, pass the count value.
-    Timer32_setCount(TIMER0,TIMER0_COUNT);
-    Timer32_setCount(TIMER1,TIMER1_COUNT);
+    Timer32_setCount(timer,count);
 
     // For the specified timer, configure the timer to repeat once it elapses.
-    Timer32_startTimer(TIMER0, REPEAT);
-    Timer32_startTimer(TIMER1, ONESHOT);
-
+    Timer32_startTimer(timer, REPEAT);
 }
 
 // TODO: Write a function that indicates whether Timer0 has expired.
@@ -39,7 +35,6 @@ bool timer0Expired(void)
     expired = (current > previous);
     previous = current;
     return expired;
-
 }
 
 // TODO: Write a function that indicates whether Timer1 has expired.
