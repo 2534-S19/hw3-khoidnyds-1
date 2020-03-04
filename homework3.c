@@ -113,11 +113,6 @@ void changeBoosterpackLED(unsigned int count)
 {
     unsigned int mode = count%8;
     switch(mode){
-    case 0: // off
-            turnOff_BoosterpackLEDRed();
-            turnOff_BoosterpackLEDGreen();
-            turnOff_BoosterpackLEDBlue();
-            break;
     case 1://red
         turnOn_BoosterpackLEDRed();
         turnOff_BoosterpackLEDGreen();
